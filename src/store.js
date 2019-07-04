@@ -106,8 +106,8 @@ export default new Vuex.Store({
     incrementBonusAttackDamage: (state, amount) => {
       state.bonusAttackDamage += amount
     },
-    incrementAbilityPower: (state, amount, isCoeff) => {
-      isCoeff ? state.abilityPower = state.abilityPower * math.floor(1 + amount) : state.abilityPower += amount
+    incrementAbilityPower: (state, payload) => {
+      state.abilityPower += payload.flat_ap
     },
     incrementCDR: (state, amount) => {
       if ((state.cooldownReduction + amount) <= 0.45)

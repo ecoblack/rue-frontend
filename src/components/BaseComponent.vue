@@ -4,6 +4,7 @@
      <pre> BASE_AD {{ BASE_AD }}</pre>
      <p>Level: {{ level }}</p>
    <Stats />
+      <Triggers />
    <Abilities />
    <Items />
    
@@ -14,6 +15,7 @@
 // Get access to store mappings
 import { mapGetters } from 'vuex'
 import Stats from '@/components/champion/Stats.vue'
+import Triggers from '@/components/Triggers.vue'
 import Abilities from '@/components/champion/Abilities.vue'
 import Items from '@/components/champion/Items.vue'
 
@@ -21,6 +23,7 @@ export default {
   name: 'BaseComponent',
    components: {
     Stats,
+    Triggers,
     Abilities,
     Items
   },

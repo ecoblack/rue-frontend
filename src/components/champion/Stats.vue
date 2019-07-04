@@ -16,7 +16,7 @@
 
         <pre>
 
-
+        <button @click="incrementAp(payload = {'flat_ap': 15, 'coeff_ap': '0', isCoeff: false})">Add infernal</button>
         </pre>
         <!-- <pre> BASE_ARMOR FROM STATS {{ BASE_ARMOR }}</pre>
         <pre> BASE_MR FROM STATS {{ BASE_MR }}</pre>-->
@@ -174,10 +174,9 @@
                 this.$store.commit("incrementBonusAttackDamage", val);
                 this.$store.commit("incrementBaseHp", val2);
             },
-            incrementAp(val, val1, val2) {
-                // console.log(val2);
-                this.$store.commit("incrementAbilityPower", val);
-                this.$store.commit("incrementBaseHp", val2);
+            incrementAp(payload) {
+                console.log(`${payload} is a PAYLOAD`)
+                this.$store.commit("incrementAbilityPower", payload);
             },
             incrementCDR(val, val2) {
                 // console.log(val);
