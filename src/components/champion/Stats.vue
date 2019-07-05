@@ -6,11 +6,20 @@
 
         <h1>{{ statSssss }}</h1>
         <pre> {{ level }} </pre>
-        <pre> BASE_AD FROM STATS {{ BASE_AD }}</pre>
-        <pre> BONUS_HP or = STORE {{ BONUS_HP }}</pre>
+
+        <h2> AD <span style="color:darkorange"> {{ attackdamage }}  </span> / <span style="color:purple"> {{ BONUS_AD  }}  </span>
+            <br>
+            <p>TOTAL AD:  {{ Math.ceil(attackdamage + BONUS_AD) }}</p>
+        </h2>
         <pre>AS is {{ attackspeed }}</pre>
         <pre>CDR is {{cooldownReduction}}</pre>
-
+        <h2> HP <span style="color:darkorange"> {{ hp }}  </span> / <span style="color:purple"> {{ BONUS_HP  }}  </span>
+            <br>
+            <p>TOTAL HP:  {{ Math.ceil(hp + BONUS_HP) }}</p>
+        </h2>
+        <h2> RESISTS <span style="color:darkorange"> {{ armor }}  </span> / <span
+                style="color:purple"> {{ spellblock }}  </span>
+        </h2>
         <h1 style="color:darkturquoise"> {{abilityPower}} </h1>
 
 
@@ -18,27 +27,16 @@
 
         <button @click="incrementAp(payload = {'flat_ap': 15, 'coeff_ap': '0', isCoeff: false})">Add infernal</button>
         </pre>
-        <!-- <pre> BASE_ARMOR FROM STATS {{ BASE_ARMOR }}</pre>
-        <pre> BASE_MR FROM STATS {{ BASE_MR }}</pre>-->
         <br>
         <button @click="increment(18)">+</button>
         <button @click="decrement(1)">-</button>
-        <button @click="incrementAd(40, 250)">Add BF Sword</button>
+        <button @click="incrementBonusAttackDamage(40, 250)">Add BF Sword</button>
         <button @click="incrementCDR(0.05)">Add 5% CDR</button>
         <br>
+        <ul>
 
-
-      <!-- champData from stats {{ champData }}  -->
-          <ul>
-<!--  <li>baseHp from stats {{ baseHp }} </li>-->
-<!--  <li>baseMp from stats {{ baseMp }} </li>-->
-<!--    <li>baseArmor from stats {{ baseArmor }} </li>-->
-<!--  <li>baseSpellblock from stats {{ baseSpellblock }} </li>-->
-
-<!--  <li>baseHpRegen from stats {{ baseHpRegen }} </li>-->
-<!--  <li>baseMpRegen from stats {{ baseMpRegen }} </li>-->
-              <li> {{statsObject}} </li>
-</ul>
+            <li> {{statsObject}}</li>
+        </ul>
 
         <select v-model="$store.state.activeChampion">
             <option disabled value>Select a champion</option>
@@ -78,21 +76,20 @@
                 "statSssss",
                 "activeChampion",
                 "level",
-                "BASE_AD",
-                "BONUS_HP"
             ]),
             ...mapGetters([
                 "champObjGet",
                 "attackspeed",
-                "BASE_AD",
+                "attackdamage",
+                "BONUS_AD",
                 "BONUS_HP",
                 "statsObject",
                 "totalBaseHp",
                 "cooldownReduction",
-                "abilityPower"
-                //   // "BASE_ARMOR",
-                //   // "BASE_MR",
-                //   "level"
+                "abilityPower",
+                "hp",
+                "armor",
+                "spellblock"
             ]),
             imgName: function () {
                 var activeChampion = this.$store.state.activeChampion;
@@ -103,47 +100,6 @@
                     return imgPath;
                 }
             },
-            baseHp: function () {
-                var champData = this.champData;
-                return champData.hp + champData.hpperlevel * (this.level - 1);
-            },
-            baseArmor: function () {
-                var champData = this.champData;
-                return champData.armor + champData.armorperlevel * (this.level - 1);
-            },
-            baseMp: function () {
-                var champData = this.champData;
-                return champData.mp + champData.mpperlevel * (this.level - 1);
-            },
-            baseSpellblock: function () {
-                var champData = this.champData;
-                return (
-                    champData.spellblock + champData.spellblockperlevel * (this.level - 1)
-                );
-            },
-            baseHpRegen: function () {
-                var champData = this.champData;
-                return champData.hpregen + champData.hpregenperlevel * (this.level - 1);
-            },
-            baseMpRegen: function () {
-                var champData = this.champData;
-                return champData.mpregen + champData.mpregenperlevel * (this.level - 1);
-            },
-            baseAttackSpeed: function () {
-                var champData = this.champData;
-                return champData.mpregen + champData.mpregenperlevel * (this.level - 1);
-            }
-            // champDatax: function() {
-            //   var activeChampion = this.$store.state.activeChampion;
-            //  console.log(activeChampion);
-            //  axios
-            //     .get("../champion.json")
-            //     .then(
-            //       response =>
-            //         (this.champData = response.data.data[`${activeChampion}`]["stats"])
-            //     );
-            //     return this.champData;
-            // }
         },
         methods: {
             calcAspd(level, offset, attackspeedperlevel, attackspeed) {
@@ -169,17 +125,17 @@
             setActiveChampion(val) {
                 this.$store.commit("setActiveChampion", val);
             },
-            incrementAd(val, val2) {
-                // console.log(val2);
-                this.$store.commit("incrementBonusAttackDamage", val);
-                this.$store.commit("incrementBaseHp", val2);
+            incrementBonusHp(val, val2) {
+                this.$store.commit("incrementBonusHp", val2);
+            },
+            incrementBonusAttackDamage(val, val2) {
+                this.$store.commit("incrementBonusAd", val2);
             },
             incrementAp(payload) {
                 console.log(`${payload} is a PAYLOAD`)
                 this.$store.commit("incrementAbilityPower", payload);
             },
             incrementCDR(val, val2) {
-                // console.log(val);
                 this.$store.commit("incrementCDR", val);
             }
         },
@@ -202,13 +158,8 @@
                         response =>
                             (this.champData = response.data.data[`${newVal}`]["stats"])
                     );
-                console.log(`watch triggered. OLD is ${oldVal}`);
-                console.log(`watch triggered. OLD is ${this.champData}`);
-                // incrementHp(this.champData.hp);
             },
             champData: function (newChampData, oldChampData) {
-                console.log(`watch triggered. New is ${newChampData}`);
-                console.log(`watch triggered. OLD is ${oldChampData}`);
                 this.$store.commit("resetStatsObject", newChampData);
                 this.$store.commit("storeStatsObject", newChampData);
             }
