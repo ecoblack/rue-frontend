@@ -11,9 +11,16 @@
 #     end
 #   end
 # end
-
+#
+require 'byebug'
 class App
+  require_relative "./services/damage/physical.rb"
+  require "trailblazer/operation"
+
   def call(env)
-    [200, {}, ['Hello world']]
+    res = Damage::Physical.(amount: 232)
+    debugger
+    puts "#{res}"
+    [200, {}, ["#{res[:total]}"]]
   end
 end

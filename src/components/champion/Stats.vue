@@ -11,8 +11,8 @@
             <br>
             <p>TOTAL AD:  {{ Math.ceil(attackdamage + BONUS_AD) }}</p>
         </h2>
-        <pre>AS is {{ attackspeed }}</pre>
-        <pre>CDR is {{cooldownReduction}}</pre>
+        <h2>BASE AS is {{ attackspeed.toFixed(3) }}</h2>
+        <h2>CDR is {{(cooldownReduction.toFixed(2)) * 100}} %</h2>
         <h2> HP <span style="color:darkorange"> {{ hp }}  </span> / <span style="color:purple"> {{ BONUS_HP  }}  </span>
             <br>
             <p>TOTAL HP:  {{ Math.ceil(hp + BONUS_HP) }}</p>
@@ -20,6 +20,7 @@
         <h2> RESISTS <span style="color:darkorange"> {{ armor }}  </span> / <span
                 style="color:purple"> {{ spellblock }}  </span>
         </h2>
+        <h2>BASE MS  {{statsObject.movespeed}} </h2>
         <h1 style="color:darkturquoise"> {{abilityPower}} </h1>
 
 
@@ -35,7 +36,7 @@
         <br>
         <ul>
 
-            <li> {{statsObject}}</li>
+            <li> </li>
         </ul>
 
         <select v-model="$store.state.activeChampion">
@@ -56,16 +57,14 @@
         data() {
             return {
                 champions: [
-
                     {id: 12, name: "JarvanIV"},
                     {id: 13, name: "Nocturne"},
                     {id: 14, name: "Nami"},
                     {id: 15, name: "Tristana"},
                     {id: 343, name: "Vayne"},
                     {id: 232, name: "Lux"},
-                    {id: 222, name: "Annie"}
-
-
+                    {id: 222, name: "Annie"},
+                    {id: 2412, name: "Neeko"}
                 ],
                 response: "",
                 champData: ""
@@ -106,13 +105,11 @@
                 aspd = aspd || 0;
                 // var i = (1 / (1.6 * (1 + offset))) * (1 + aspd + (aspdper * (level - 1)) / 100);
                 var i = 2.3 * (level - 1) * (0.7025 + 0.0175 * (level - 1))
-//       Statistic=b+g×(n−1)×(0.7025+0.0175×(n−1))
-
-// b = base
-// g = growth statistic
-// n = champion level
-// (n - 1) = total amount of level ups
-
+                //       Statistic=b+g×(n−1)×(0.7025+0.0175×(n−1))
+                // b = base
+                // g = growth statistic
+                // n = champion level
+                // (n - 1) = total amount of level ups
                 //At level he has gained 3.22%×(level−1)×(0.7025+0.0175×(level−1))=24.9228% as bonus AS%.
                 return Math.round(i * 1000) / 1000;
             },
