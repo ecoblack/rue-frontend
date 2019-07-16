@@ -12,14 +12,16 @@
 #   end
 # end
 #
+require 'rack/cors'
 require 'byebug'
 class App
   require_relative "./services/damage/physical.rb"
   require "trailblazer/operation"
 
   def call(env)
-    res = Damage::Physical.(amount: 232)
     debugger
+    res = Damage::Physical.(amount: 232)
+
     puts "#{res}"
     [200, {}, ["#{res[:total]}"]]
   end

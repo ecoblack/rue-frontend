@@ -29,6 +29,8 @@
         <button @click="incrementAp(payload = {'flat_ap': 15, 'coeff_ap': '0', isCoeff: false})">Add infernal</button>
         </pre>
         <br>
+        <button @click="rue(123)">POST STORE TO BACKEND</button>
+
         <button @click="increment(18)">+</button>
         <button @click="decrement(1)">-</button>
         <button @click="incrementBonusAttackDamage(40, 250)">Add BF Sword</button>
@@ -112,6 +114,16 @@
                 // (n - 1) = total amount of level ups
                 //At level he has gained 3.22%×(level−1)×(0.7025+0.0175×(level−1))=24.9228% as bonus AS%.
                 return Math.round(i * 1000) / 1000;
+            },
+            rue(val) {
+                axios({ method: 'POST',
+                    url: 'http://localhost:9292/cors',
+                    crossdomain: true,
+                    data: {
+                        ok: 2,
+                        b: 1
+                    }
+                });
             },
             increment(limit) {
                 this.$store.commit("increment", limit);
