@@ -120,7 +120,7 @@
                     url: 'http://localhost:9292/cors',
                     crossdomain: true,
                     data: {
-                        ok: 2,
+                        ok: this.$store.state,
                         b: 1
                     }
                 });
