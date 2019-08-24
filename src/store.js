@@ -51,8 +51,13 @@ export default new Vuex.Store({
             "attackdamage": 0,
             "attackdamageperlevel": 0,
             "attackspeedperlevel": 0,
-            "attackspeed": 0
+            "attackspeed": 0,
+            "lethality": 0,
+            "mag_pen_flat": 0,
+            "arm_pen": 0,
+            "mag_pen": 0,
         },
+
         champObj: {
             "isRanged": isRanged(),
             "runeSet": runeSet(),
@@ -76,6 +81,9 @@ export default new Vuex.Store({
         BONUS_ARMOR: state => {
             return state.bonusArmor
         },
+        Lethality: state => {
+            return state.statsObj.lethality
+        },
         BONUS_SPELLBLOCK: state => {
             return state.bonusSpellblock
         },
@@ -87,6 +95,16 @@ export default new Vuex.Store({
         },
         level: state => {
             return state.level
+        },
+        mpregen: state => {
+            var x = (state.level - 1)
+            var y = state.statsObj.mpregen + (state.statsObj.mpregenperlevel * x)
+            return y
+        },
+        hpregen: state => {
+            var x = (state.level - 1)
+            var y = state.statsObj.hpregen + (state.statsObj.hpregenperlevel * x)
+            return y
         },
         hp: state => {
             var x = (state.level - 1)
@@ -152,6 +170,9 @@ export default new Vuex.Store({
         incrementCDR: (state, amount) => {
             if ((state.cooldownReduction + amount) <= 0.45)
                 state.cooldownReduction += amount
+        },
+        incrementLethality: (state, amount) => {
+            state.statsObj.lethality += amount
         },
         incrementBonusHp: (state, amount) => {
             state.bonusHp += amount

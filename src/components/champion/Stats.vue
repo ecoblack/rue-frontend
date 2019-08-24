@@ -7,22 +7,38 @@
         <h1>{{ statSssss }}</h1>
         <pre> {{ level }} </pre>
 
-        <h2> AD <span style="color:darkorange"> {{ attackdamage }}  </span> / <span style="color:purple"> {{ BONUS_AD  }}  </span>
-            <br>
-            <p>TOTAL AD:  {{ Math.ceil(attackdamage + BONUS_AD) }}</p>
-        </h2>
-        <h2>BASE AS is {{ attackspeed.toFixed(3) }}</h2>
-        <h2>CDR is {{(cooldownReduction.toFixed(2)) * 100}} %</h2>
-        <h2> HP <span style="color:darkorange"> {{ hp }}  </span> / <span style="color:purple"> {{ BONUS_HP  }}  </span>
-            <br>
-            <p>TOTAL HP:  {{ Math.ceil(hp + BONUS_HP) }}</p>
-        </h2>
-        <h2> RESISTS <span style="color:darkorange"> {{ armor }}  </span> / <span
-                style="color:purple"> {{ spellblock }}  </span>
-        </h2>
-        <h2>BASE MS  {{statsObject.movespeed}} </h2>
-        <h1 style="color:darkturquoise"> {{abilityPower}} </h1>
 
+        <div class="wrapper">
+            <div>
+                <h2> HP <span style="color:darkorange"> {{ hp }}  </span> / <span
+                        style="color:purple"> {{ BONUS_HP  }}  </span>
+                    <br>
+                    <p>TOTAL HP: {{ Math.ceil(hp + BONUS_HP) }}</p>
+                </h2>
+            </div>
+            <div>
+                <h2> AD <span style="color:darkorange"> {{ attackdamage }}  </span> / <span style="color:purple"> {{ BONUS_AD  }}  </span>
+                    <br>
+                    <p>TOTAL AD: {{ Math.ceil(attackdamage + BONUS_AD) }}</p>
+                </h2>
+            </div>
+            <div>Ability Power:<h1 style="color:darkturquoise"> {{abilityPower}} </h1>
+                /
+                <h2>CDR is {{(cooldownReduction.toFixed(2)) * 100}} %</h2></div>
+            <div><h2> RESISTS <span style="color:darkorange"> {{ armor }}  </span> / <span
+                    style="color:purple"> {{ spellblock }}  </span>
+            </h2></div>
+            <div>Mag Penetration / Lethality</div>
+            <div> Base movespeed<h2> {{statsObject.movespeed}} </h2></div>
+            <div>
+                <h2> HPREGEN <span style="color:darkorange"> {{ hpregen }}  </span> / <span
+                        style="color:purple"> {{ BONUS_HP  }}  </span>
+                    <br>
+                    <p>TOTAL HP: {{ Math.ceil(hp + BONUS_HP) }}</p>
+                </h2>
+            </div>
+            <div><h2>BASE AS is {{ attackspeed.toFixed(3) }}</h2></div>
+        </div>
 
         <pre>
 
@@ -38,7 +54,7 @@
         <br>
         <ul>
 
-            <li> </li>
+            <li></li>
         </ul>
 
         <select v-model="$store.state.activeChampion">
@@ -116,7 +132,8 @@
                 return Math.round(i * 1000) / 1000;
             },
             rue(val) {
-                axios({ method: 'POST',
+                axios({
+                    method: 'POST',
                     url: 'http://localhost:9292/cors',
                     crossdomain: true,
                     data: {
@@ -177,7 +194,27 @@
 </script>
 
 <style scoped>
+    #stats {
+        display: grid;
+        grid-template-columns: 1fr 11fr;
+    }
     img {
         max-height: 150px;
     }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 2px solid #f76707;
+    }
+
+    .wrapper > div {
+        border: 2px solid mediumaquamarine;
+        border-radius: 5px;
+
+        padding: 1em;
+
+    }
+
+
 </style>

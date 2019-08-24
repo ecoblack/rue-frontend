@@ -4,7 +4,7 @@ module Damage
   end
 
   def recieve(amount)
-      puts "Recieved #{amount} of damage"
+    # puts "Recieved #{amount} of damage"
   end
 
 end

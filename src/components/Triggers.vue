@@ -3,19 +3,16 @@
         <div id="triggers">
            T R I G G E R S
             <div class="trigger-container">
-                <p>T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                T R I G G E R S
-                    T R I G G E R S</p>
+                <button @click="incrementAp(payload = {'flat_ap': 15, 'coeff_ap': '0', isCoeff: false})">AA</button>
+                <br>
+<!--                <button @click="rue(123)">POST STORE TO BACKEND</button>-->
+<!--                <button @click="increment(18)">+</button>-->
+<!--                <button @click="decrement(1)">-</button>-->
+                <button @click="incrementBonusAttackDamage(40, 250)">Cast Q</button>
+                <button @click="incrementBonusAttackDamage(40, 250)">Cast W</button>
+                <button @click="incrementBonusAttackDamage(40, 250)">Cast E</button>
+                <button @click="incrementBonusAttackDamage(40, 250)">Cast R</button>
+                <button @click="incrementCDR(0.05)">Add 5% CDR</button>
             </div>
         </div>
 
