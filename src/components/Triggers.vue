@@ -14,6 +14,28 @@
                 <button @click="incrementBonusAttackDamage(40, 250)">Cast R</button>
                 <button @click="incrementCDR(0.05)">Add 5% CDR</button>
             </div>
+
+
+            <pre>
+                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
+                print length([2+1, 3*2, 1/0, 5-4])
+                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
+                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
+                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
+
+                print length([2+1, 3*2, 1/0, 5-4])
+                ____
+
+                Damage send
+
+
+
+            </pre>
+
+            <p>DAMAGE TOTAL: 3434</p>
+            <br>
+            <p>PHYSICAL</p><p>MAGIC</p><p>TRUE</p>
+
         </div>
 
 </template>

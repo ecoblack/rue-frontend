@@ -2,6 +2,9 @@
 require 'rack/cors'
 require 'json'
 require 'byebug'
+require_relative "./services/damage/physical.rb"
+require "trailblazer/operation"
+
 class Heartbeat
   def self.call(env)
     req = Rack::Request.new(env)
@@ -10,6 +13,8 @@ class Heartbeat
     debugger
     case req.path_info
     when /cors/
+      debugger
+      res = Damage::Physical.(amount: 232)
       [200, {"Content-Type" => "text/html"}, ["Hello World!"]]
     when /cors2/
       [500, {"Content-Type" => "text/html"}, ["Goodbye Cruel World!"]]
@@ -18,6 +23,7 @@ class Heartbeat
     end
   end
 end
+
 
 app = Rack::Builder.app do
   use Rack::Cors do
