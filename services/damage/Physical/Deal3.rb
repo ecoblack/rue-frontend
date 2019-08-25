@@ -1,9 +1,8 @@
+
 require "trailblazer/operation"
 require 'byebug'
-
-
-module Damage
-  class Physical < Trailblazer::Operation
+module Physical
+  class Deal3 < Trailblazer::Operation
 
     step :hello_world!
 
@@ -12,7 +11,9 @@ module Damage
       puts "Hello, Trailblazer!"
       true
     end
+
+
+
   end
 end
-
 

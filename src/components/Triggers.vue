@@ -17,17 +17,12 @@
 
 
             <pre>
-                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
-                print length([2+1, 3*2, 1/0, 5-4])
-                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
-                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
-                print length([2+1, 3*2, 1/0, 5-4])print length([2+1, 3*2, 1/0, 5-4])
 
-                print length([2+1, 3*2, 1/0, 5-4])
-                ____
+                Damage send [[[ DAMAGE ]]]
 
-                Damage send
+                Damage negotiated [[[ DAMAGE SOAKED ]]]
 
+                <p color="red"> Damage dealed [[[ DAMAGE DEALED ]]] </p>
 
 
             </pre>

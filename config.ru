@@ -1,29 +1,8 @@
-# # require "./app"
 require 'rack/cors'
+
 require 'json'
 require 'byebug'
-require_relative "./services/damage/physical.rb"
-require "trailblazer/operation"
-
-class Heartbeat
-  def self.call(env)
-    req = Rack::Request.new(env)
-    x = req.body.read
-    puts x
-    debugger
-    case req.path_info
-    when /cors/
-      debugger
-      res = Damage::Physical.(amount: 232)
-      [200, {"Content-Type" => "text/html"}, ["Hello World!"]]
-    when /cors2/
-      [500, {"Content-Type" => "text/html"}, ["Goodbye Cruel World!"]]
-    else
-      [404, {"Content-Type" => "text/html"}, ["I'm Lost!"]]
-    end
-  end
-end
-
+require "./app"
 
 app = Rack::Builder.app do
   use Rack::Cors do
@@ -33,7 +12,8 @@ app = Rack::Builder.app do
     end
   end
   use Rack::CommonLogger
-  run Heartbeat
+  run App
+  # run App
 end
 
 run app

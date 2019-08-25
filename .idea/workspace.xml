@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42f2d893-8c5c-4d8b-90fc-982cabf1f48f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/damage/Physical/Deal3.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.byebug_history" beforeDir="false" afterPath="$PROJECT_DIR$/.byebug_history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/damage/Physical.rb" beforeDir="false" afterPath="$PROJECT_DIR$/services/damage/Physical.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Triggers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Triggers.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,18 +25,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>axios</find>
-      <find>aatrox</find>
-      <find>incrementAd</find>
-      <find>Item</find>
-      <find>spell</find>
-      <find>incrementad</find>
-      <find>axios.defaults.withCredentials = true</find>
-      <find>vuex</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -42,22 +33,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/services/damage/Physical" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/services/damage" />
       <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/damage/Physical" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,7 +110,7 @@
       <workItem from="1564863346273" duration="58000" />
       <workItem from="1564865824244" duration="2000" />
       <workItem from="1566662590617" duration="31000" />
-      <workItem from="1566662636511" duration="645000" />
+      <workItem from="1566662636511" duration="5761000" />
     </task>
     <task id="LOCAL-00001" summary="Added CORS support">
       <created>1563274936891</created>
