@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42f2d893-8c5c-4d8b-90fc-982cabf1f48f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/damage/Physical/Deal3.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ensure_json_responce.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/runes/rune.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.byebug_history" beforeDir="false" afterPath="$PROJECT_DIR$/.byebug_history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/damage/Physical.rb" beforeDir="false" afterPath="$PROJECT_DIR$/services/damage/Physical.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Triggers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Triggers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/champion/Abilities.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/champion/Abilities.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +23,7 @@
         <option value="Vue Single File Component" />
         <option value="RSpec Template" />
         <option value="Ruby File" />
+        <option value="Ruby Class" />
       </list>
     </option>
   </component>
@@ -110,7 +112,8 @@
       <workItem from="1564863346273" duration="58000" />
       <workItem from="1564865824244" duration="2000" />
       <workItem from="1566662590617" duration="31000" />
-      <workItem from="1566662636511" duration="5761000" />
+      <workItem from="1566662636511" duration="13283000" />
+      <workItem from="1566840317355" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="Added CORS support">
       <created>1563274936891</created>

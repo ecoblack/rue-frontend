@@ -1,17 +1,18 @@
-require 'rack/cors'
 require 'byebug'
 require_relative "./services/damage/physical.rb"
 require "trailblazer/operation"
-require 'rack'
 
 class App
-  debugger
   def self.call(env)
-    debugger
+
     req = Rack::Request.new(env)
+    data = env['rack.input'].read
+    req.post?
+    p JSON.parse(data) if data
+    debugger
     case req.path_info
     when /cors/
-      [200, {"Content-Type" => "text/html"}, ["Hello World!"]]
+      [200, {"Content-Type" => "text/html"}, ["Hello World!"], ["#{data}"]]
     when /cors2/
       [500, {"Content-Type" => "text/html"}, ["Goodbye Cruel World!"]]
     else

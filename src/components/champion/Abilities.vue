@@ -372,7 +372,7 @@
     }
 
     #abilities {
-        background-color: #575f8b;
+        background-color: #292b31;
         padding: 20px;
         /* max-width: 450px; */
         display: inline-block;

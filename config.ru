@@ -12,8 +12,8 @@ app = Rack::Builder.app do
     end
   end
   use Rack::CommonLogger
+  #run EnsureJsonResponse
   run App
-  # run App
 end
 
 run app
