@@ -140,7 +140,11 @@
                         ok: this.$store.state,
                         b: 1
                     }
-                });
+                }).then(function (response) {
+                    console.log(response.config['data']);
+                }).catch(function (error) {
+                        console.log(error);
+                    });
             },
             increment(limit) {
                 this.$store.commit("increment", limit);

@@ -1,13 +1,14 @@
 require "trailblazer/operation"
 require 'byebug'
-
+require 'pry'
 
 module Damage
   class Physical < Trailblazer::Operation
 
-    step :hello_world!
+    step :deal
 
-    def hello_world!(options, *)
+    def deal(options, *)
+      binding.pry
       options[:total] = options[:amount] * 2
       puts "Hello, Trailblazer!"
       true

@@ -8,8 +8,9 @@ class App
     req = Rack::Request.new(env)
     data = env['rack.input'].read
     req.post?
-    p JSON.parse(data) if data
-    debugger
+    request_data = JSON.parse(data) if data
+    result = Damage::Physical.(data: request_data)
+    puts result
     case req.path_info
     when /cors/
       [200, {"Content-Type" => "text/html"}, ["Hello World!"], ["#{data}"]]
