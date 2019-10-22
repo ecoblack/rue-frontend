@@ -1,6 +1,16 @@
 version: '3.7'
 
 services:
+  back:
+    container_name: rue-backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    volumes:
+      - '.:/backend'
+    ports:
+      - '1488:5000'
+    restart: always
   front:
     container_name: rue-frontend
     build:
