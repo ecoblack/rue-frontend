@@ -9,7 +9,7 @@ services:
     volumes:
       - '.:/backend'
     ports:
-      - '1488:5000'
+      - '1488:9292'
     restart: always
   front:
     container_name: rue-frontend

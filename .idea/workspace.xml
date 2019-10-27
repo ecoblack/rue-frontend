@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42f2d893-8c5c-4d8b-90fc-982cabf1f48f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config.ru" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/SuperExample.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/damage/Physical.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/damage/Physical/Deal.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/damage/damage.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/example.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/runes/rune.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/runes/sorcery.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.byebug_history" beforeDir="false" afterPath="$PROJECT_DIR$/.byebug_history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_file.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.ru" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/name.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/damage/Physical.rb" beforeDir="false" afterPath="$PROJECT_DIR$/services/damage/Physical.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,18 +50,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/services/damage" />
-      <recent name="$PROJECT_DIR$/services" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/services/damage/Physical" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/concepts/damage/operations" />
+      <recent name="$PROJECT_DIR$/backend/concepts/damage" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/services/damage" />
+      <recent name="$PROJECT_DIR$/services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -122,7 +131,10 @@
       <workItem from="1571612291198" duration="803000" />
       <workItem from="1571655081092" duration="25000" />
       <workItem from="1571684794582" duration="1492000" />
-      <workItem from="1571690445044" duration="2990000" />
+      <workItem from="1571690445044" duration="3191000" />
+      <workItem from="1571836975306" duration="2283000" />
+      <workItem from="1572047675248" duration="2587000" />
+      <workItem from="1572203206965" duration="5500000" />
     </task>
     <task id="LOCAL-00001" summary="Added CORS support">
       <created>1563274936891</created>

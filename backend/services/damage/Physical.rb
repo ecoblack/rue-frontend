@@ -10,7 +10,7 @@ module Damage
     def deal(options, *)
       binding.pry
       options[:total] = options[:amount] * 2
-      puts "Hello, TrailbXlazer!"
+      puts "Hello, Trailblazer!"
       true
     end
   end

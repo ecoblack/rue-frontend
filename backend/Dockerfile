@@ -8,7 +8,9 @@ WORKDIR /app
 COPY Gemfile /app/
 RUN bundle install
 COPY . /app
-EXPOSE 5000
+COPY ./services /app/services
+COPY ./concepts /app/concepts
+EXPOSE 9292
 #ENTRYPOINT ["bash"]
 # Start rack app
 CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "5000"]
