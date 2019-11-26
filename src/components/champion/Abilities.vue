@@ -294,6 +294,7 @@
                 "champObjGet",
                 "BASE_AD",
                 "BONUS_HP",
+                "hp",
                 "statsObject",
                 "totalBaseHp",
                 "cooldownReduction",
@@ -331,7 +332,6 @@
             var activeChampion = this.$store.state.activeChampion;
             console.log("created + called.");
             axios.get("../temp.json").then(response => {
-                console.log(response.data[`${activeChampion}`]);
                 this.passive = response.data[`${activeChampion}`];
             });
             axios.get("../championFull.json").then(response => {

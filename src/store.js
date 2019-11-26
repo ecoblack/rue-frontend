@@ -109,6 +109,7 @@ export default new Vuex.Store({
         hp: state => {
             var x = (state.level - 1)
             var y = state.statsObj.hp + (state.statsObj.hpperlevel * x)
+            console.error(y)
             return y
         },
         cooldownReduction: state => {

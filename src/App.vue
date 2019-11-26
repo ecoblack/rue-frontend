@@ -10,11 +10,12 @@
 
 <style>
 #app {
+  background-color: #212021;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #71889e;
 }
 #nav {
   padding: 30px;

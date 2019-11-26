@@ -3,17 +3,18 @@
         <div class="avatar">
             <img :src="imgName">
         </div>
-
+        <button @click="increment(18)">+</button>
+        <button @click="decrement(1)">-</button>
         <h1>{{ statSssss }}</h1>
         <pre> {{ level }} </pre>
+        <button v-on:click="isHidden = !isHidden">Toggle hide and show</button>
 
-
-        <div class="wrapper">
+        <div v-if="!isHidden" class="wrapper">
             <div>
-                <h2> HP <span style="color:darkorange"> {{ hp }}  </span> / <span
-                        style="color:purple"> {{ BONUS_HP  }}  </span>
+                <h2> HP <span style="color:red"> {{ hp }}  </span> / <span
+                        style="color:darkred"> (+{{ BONUS_HP  }}) </span>
                     <br>
-                    <p>TOTAL HP: {{ Math.ceil(hp + BONUS_HP) }}</p>
+                    <p>MAX HP: {{ Math.ceil(hp + BONUS_HP) }}</p>
                 </h2>
             </div>
             <div>
@@ -47,10 +48,14 @@
         <br>
         <button @click="rue(123)">POST STORE TO BACKEND</button>
 
-        <button @click="increment(18)">+</button>
-        <button @click="decrement(1)">-</button>
-        <button @click="incrementBonusAttackDamage(40, 250)">Add BF Sword</button>
+
+        <button @click="incrementBonusHp(32, 123)">+ 123 HP</button>
+        <button @click="incrementBonusAttackDamage(40, 40)">Add BF Sword</button>
         <button @click="incrementCDR(0.05)">Add 5% CDR</button>
+
+        <button @click="incrementCDR(0.05)">Add 5% CDR</button>
+
+
         <br>
         <ul>
 
@@ -85,7 +90,8 @@
                     {id: 2412, name: "Neeko"}
                 ],
                 response: "",
-                champData: ""
+                champData: "",
+                isHidden: false
             };
         },
         computed: {
@@ -98,6 +104,7 @@
                 "champObjGet",
                 "attackspeed",
                 "attackdamage",
+                "total_hp",
                 "BONUS_AD",
                 "BONUS_HP",
                 "statsObject",
@@ -134,11 +141,12 @@
             rue(val) {
                 axios({
                     method: 'POST',
-                    url: 'http://localhost:9292/cors',
+                    url: 'http://localhost:1488/damage',
                     crossdomain: true,
                     data: {
                         ok: this.$store.state,
-                        b: 1
+                        b: 1,
+                        // c: hp
                     }
                 });
             },
@@ -156,6 +164,19 @@
             },
             incrementBonusAttackDamage(val, val2) {
                 this.$store.commit("incrementBonusAd", val2);
+            },
+            graspOfTheUndying(range, sender, receiver) {
+                //PASSIVE: Dealing or receiving damage within 2 seconds generates one stack every second.
+                // At 4 stacks, your next basic attack within 6 seconds against an enemy champion
+                // deals 4% of your maximum health bonus magic damage, restores 2% of your maximum health,
+                // and permanently grants 5 bonus health.
+                // The empowered attack duration refreshes whenever dealing or receiving damage.
+                // On Ranged role ranged champions, the effects are reduced by 40%,
+                // down to 2.4% of your maximum health,
+                // 1.2% of your maximum health, and 3 bonus health respectively.
+                maxHP = hp + BONUS_HP;
+                console.log(`watch triggered. Range is ${range}, sender = ${sender}, receiver = ${receiver}`);
+                console.log(maxHP);
             },
             incrementAp(payload) {
                 console.log(`${payload} is a PAYLOAD`)
@@ -194,10 +215,7 @@
 </script>
 
 <style scoped>
-    #stats {
-        display: grid;
-        grid-template-columns: 1fr 11fr;
-    }
+
     img {
         max-height: 150px;
     }
@@ -215,6 +233,4 @@
         padding: 1em;
 
     }
-
-
 </style>
