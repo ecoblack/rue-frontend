@@ -330,6 +330,7 @@
         },
         created() {
             var activeChampion = this.$store.state.activeChampion;
+            var startDrake = this.$store.state.startDrake;
             console.log("created + called.");
             axios.get("../temp.json").then(response => {
                 this.passive = response.data[`${activeChampion}`];

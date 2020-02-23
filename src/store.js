@@ -15,20 +15,35 @@ const isRanged = function (x) {
 }
 
 export default new Vuex.Store({
-
+    modules: {
+        // d: dragonModule,
+    },
     state: {
         title: 'LOL // SANDBOX 101',
         statss: 'hello from STATS',
         bonusAttackDamage: 0,
+        attackdamage: 0,
         bonusHp: 0,
         totalBaseHp: 0,
         cooldownReduction: 0,
         activeChampion: 'Nami',
+
+        startDrake: 0,
+        nextDrake: 0,
+        totalDrakeCounter: 0,
+
+        drakeObj: {
+            mountain: 0,
+            infernal: 0,
+            cloud: 0,
+            ocean: 0
+        },
         level: 1,
         hp: 0,
         abilityPower: 0,
         armor: 0,
         bonusArmor: 0,
+        totalAd: 0,
         spellblock: 0,
         bonusSpellblock: 0,
         statsObj: {
@@ -57,7 +72,7 @@ export default new Vuex.Store({
             "arm_pen": 0,
             "mag_pen": 0,
         },
-
+        autoAttackValue: {},
         champObj: {
             "isRanged": isRanged(),
             "runeSet": runeSet(),
@@ -74,6 +89,9 @@ export default new Vuex.Store({
         },
         BONUS_AD: state => {
             return state.bonusAttackDamage
+        },
+        totalAD: state => {
+            return state.totalAd
         },
         BONUS_HP: state => {
             return state.bonusHp
@@ -93,6 +111,12 @@ export default new Vuex.Store({
         activeChampion: state => {
             return state.activeChampion
         },
+        startDrake: state => {
+            return state.startDrake
+        },
+        nextDrake: state => {
+            return state.nextDrake
+        },
         level: state => {
             return state.level
         },
@@ -109,7 +133,7 @@ export default new Vuex.Store({
         hp: state => {
             var x = (state.level - 1)
             var y = state.statsObj.hp + (state.statsObj.hpperlevel * x)
-            console.error(y)
+            console.error('HP GETTER')
             return y
         },
         cooldownReduction: state => {
@@ -134,6 +158,7 @@ export default new Vuex.Store({
         attackdamage: state => {
             var x = (state.level - 1)
             var y = state.statsObj.attackdamage + (state.statsObj.attackdamageperlevel * x)
+            console.log(y)
             return y
         },
         attackspeed: state => {
@@ -156,8 +181,48 @@ export default new Vuex.Store({
         setActiveChampion: (state, champion) => {
             state.activeChampion = champion
         },
+        setStartDrake: (state, drake) => {
+            console.log(`${drake}`)
+            state.startDrake = drake
+        },
+        setNextDrake: (state, payload) => {
+            //let myArray = ['one','two','three'];
+            // let mySplicedArray = [...myArray];
+            // mySplicedArray.splice(1,1);
+
+            console.log(myArray); /// ['one', 'two', 'three']
+            console.log(mySplicedArray); /// ['one', 'three']
+
+            console.log(`DRAKE MUTATION ${drake}`)
+            state.nextDrake = drake
+        },
+        addDrake: (state, drake) => {
+            var x = state.drakeObj
+            state.drakeObj.push(x[drake] + 1)
+            console.log(`${drake}`)
+            state.startDrake = drake
+        },
+        resetDrakePanel: () => {
+            state.startDrake = 0
+        },
         incrementBonusAd: (state, amount) => {
             state.bonusAttackDamage += amount
+        },
+        incrementBaseAD: (state, amount) => {
+            state.attackdamage = amount
+        },
+        setTotalDamage: (state, amount) => {
+            //console.log(`${state.bonusAttackDamage}`);
+            var x = (state.level - 1)
+            var y = state.statsObj.attackdamage + (state.statsObj.attackdamageperlevel * x)
+            console.log('TOTAL DAMAGE GETTER')
+            var total = y + amount
+            state.totalAd = total
+
+
+        },
+        incrementTotalAd: (state, amount) => {
+            state.totalAd = amount
         },
         incrementBonusArmor: (state, amount) => {
             state.bonusArmor += amount
@@ -187,7 +252,10 @@ export default new Vuex.Store({
         },
         resetStatsObject: (state, obj) => {
             state.totalBaseHp = obj.hp + (obj.hpperlevel * (state.level - 1))
-        }
+        },
+        SET_AUTO_ATTACK: (state, obj) => {
+            state.autoAttackValue = obj
+        },
 
     },
     actions: {
