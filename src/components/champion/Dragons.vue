@@ -56,7 +56,7 @@
             addDrakeBy(id) {
                 axios({
                     method: 'POST',
-                    url: 'http://localhost:1488/drake',
+                    url: 'http://localhost:3000/api/drake',
                     crossdomain: true,
                     data: $store.state.drakeObj
                 });

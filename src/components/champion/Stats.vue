@@ -86,6 +86,7 @@
                     {id: 343, name: "Vayne"},
                     {id: 232, name: "Lux"},
                     {id: 222, name: "Annie"},
+                    {id: 2322, name: "Teemo"},
                     {id: 2412, name: "Neeko"}
                 ],
                 autoAttackValue: this.$store.state.autoAttackValue,
@@ -158,7 +159,7 @@
             rue(val) {
                 axios({
                     method: 'POST',
-                    url: 'http://localhost:1488/auto',
+                    url: 'http://localhost:3000/api/auto',
                     crossdomain: true,
                     data: {
                         ok: this.$store.state,
@@ -171,7 +172,7 @@
             autoAttack(val) {
                 axios({
                     method: 'POST',
-                    url: 'http://localhost:1488/auto',
+                    url: 'http://localhost:3000/api/auto',
                     crossdomain: true,
                     data: {
                         caster: {

@@ -306,10 +306,10 @@
                 console.log(`this is CurrentRank: ${this.q.cooldown[qRank]}`)
                 return this.q.cooldown[qRank];
             },
-            imxgNameP: function () {
-                var imgPath = "/img/champion/passive/" + this.p.image.full;
-                return imgPath;
-            },
+            // imxgNameP: function () {
+            //     var imgPath = "/img/champion/passive/" + this.p.image.full;
+            //     return imgPath;
+            // },
             imxgNameQ: function () {
                 var imgPath = "/img/champion/spell/" + this.q.image.full;
                 return imgPath;

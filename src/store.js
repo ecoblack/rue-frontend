@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import i from './modules/i'
+import s from './modules/s'
+import d from './modules/d'
+import r from './modules/r'
+
 Vue.use(Vuex)
 
 const runeSet = function () {
@@ -16,8 +21,11 @@ const isRanged = function (x) {
 
 export default new Vuex.Store({
     modules: {
-        // d: dragonModule,
-    },
+        d,
+        i,
+        s,
+        r,
+        },
     state: {
         title: 'LOL // SANDBOX 101',
         statss: 'hello from STATS',
@@ -27,7 +35,6 @@ export default new Vuex.Store({
         totalBaseHp: 0,
         cooldownReduction: 0,
         activeChampion: 'Nami',
-
         startDrake: 0,
         nextDrake: 0,
         totalDrakeCounter: 0,
@@ -111,12 +118,6 @@ export default new Vuex.Store({
         activeChampion: state => {
             return state.activeChampion
         },
-        startDrake: state => {
-            return state.startDrake
-        },
-        nextDrake: state => {
-            return state.nextDrake
-        },
         level: state => {
             return state.level
         },
@@ -181,30 +182,7 @@ export default new Vuex.Store({
         setActiveChampion: (state, champion) => {
             state.activeChampion = champion
         },
-        setStartDrake: (state, drake) => {
-            console.log(`${drake}`)
-            state.startDrake = drake
-        },
-        setNextDrake: (state, payload) => {
-            //let myArray = ['one','two','three'];
-            // let mySplicedArray = [...myArray];
-            // mySplicedArray.splice(1,1);
 
-            console.log(myArray); /// ['one', 'two', 'three']
-            console.log(mySplicedArray); /// ['one', 'three']
-
-            console.log(`DRAKE MUTATION ${drake}`)
-            state.nextDrake = drake
-        },
-        addDrake: (state, drake) => {
-            var x = state.drakeObj
-            state.drakeObj.push(x[drake] + 1)
-            console.log(`${drake}`)
-            state.startDrake = drake
-        },
-        resetDrakePanel: () => {
-            state.startDrake = 0
-        },
         incrementBonusAd: (state, amount) => {
             state.bonusAttackDamage += amount
         },
@@ -218,8 +196,6 @@ export default new Vuex.Store({
             console.log('TOTAL DAMAGE GETTER')
             var total = y + amount
             state.totalAd = total
-
-
         },
         incrementTotalAd: (state, amount) => {
             state.totalAd = amount

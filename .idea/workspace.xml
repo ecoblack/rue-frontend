@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42f2d893-8c5c-4d8b-90fc-982cabf1f48f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/runesReforged.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/champion/Curve.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/champion/Dragons.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/champion/Navbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/champion/SelectDropdown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/champion/SelectList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/champion/ToogleButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/Nav.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/SelectDropdown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/SelectList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/ToggleButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/d.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.byebug_history" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/i.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/r.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/s.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/SuperExample.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/damage/Physical.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/damage/Physical/Deal.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/damage/damage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/example.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/damage/physical_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BaseComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BaseComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/champion/Abilities.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/champion/Abilities.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/champion/Items.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/champion/Items.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/champion/Dragons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/champion/Dragons.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/champion/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/champion/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/champion/Stats.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/champion/Stats.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/d.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/d.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/champion" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -165,7 +143,19 @@
       <workItem from="1581964564759" duration="2501000" />
       <workItem from="1582052157082" duration="11293000" />
       <workItem from="1582471197222" duration="250000" />
-      <workItem from="1582472155536" duration="2422000" />
+      <workItem from="1582472155536" duration="4775000" />
+      <workItem from="1582498649945" duration="739000" />
+      <workItem from="1582534921311" duration="87000" />
+      <workItem from="1584352183327" duration="437000" />
+      <workItem from="1584873092387" duration="1748000" />
+      <workItem from="1585346413342" duration="769000" />
+      <workItem from="1585395544357" duration="259000" />
+      <workItem from="1585412128097" duration="248000" />
+      <workItem from="1588273598277" duration="1409000" />
+      <workItem from="1588518384115" duration="598000" />
+      <workItem from="1588523092371" duration="38000" />
+      <workItem from="1588545194461" duration="1239000" />
+      <workItem from="1590831622240" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="Added CORS support">
       <created>1563274936891</created>
